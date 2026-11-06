@@ -1,0 +1,42 @@
+.whatsapp-fab {
+  position: fixed;
+  right: max(var(--space-sm), env(safe-area-inset-right));
+  bottom: max(var(--space-sm), env(safe-area-inset-bottom));
+  z-index: var(--z-toast);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: var(--color-on-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  pointer-events: none;
+  transition: opacity var(--duration-normal) var(--ease-out), transform var(--duration-normal) var(--ease-out), background-color var(--duration-fast) var(--ease-out);
+}
+
+.whatsapp-fab.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.whatsapp-fab:hover {
+  background: var(--color-white);
+}
+
+/* Sits above the mobile cart bar. */
+@media (max-width: 899px) {
+  .whatsapp-fab {
+    bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-fab {
+    transform: none;
+  }
+}

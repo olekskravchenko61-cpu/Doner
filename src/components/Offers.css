@@ -1,0 +1,106 @@
+.offers__list {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.offer {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.offer__media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-lg);
+  background: var(--color-graphite);
+}
+
+.offer__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offer__day {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-red-text);
+}
+
+.offer__today {
+  padding: 0.15rem 0.6rem;
+  background: var(--color-graphite);
+  color: var(--color-white);
+  font-size: var(--fs-small);
+  letter-spacing: 0.04em;
+}
+
+.offer__label {
+  margin-top: var(--space-2xs);
+  font-size: clamp(2.25rem, 7vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.offer__price {
+  display: inline-block;
+  margin-top: var(--space-xs);
+  padding: 0.1rem 0.75rem;
+  background: var(--color-red);
+  color: var(--color-on-red);
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+@media (min-width: 800px) {
+  .offer {
+    grid-template-columns: 5fr 7fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  /* Mirrors every second row so the two offers don't read as a repeated card. */
+  .offer:nth-child(even) {
+    grid-template-columns: 7fr 5fr;
+  }
+
+  .offer:nth-child(even) .offer__media {
+    order: 2;
+  }
+}
+
+.offers__note {
+  margin-top: var(--space-lg);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.offer__item {
+  margin-top: var(--space-2xs);
+  font-family: var(--font-heading);
+  font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+  font-weight: 600;
+}
+
+.offer__terms {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+  margin-top: var(--space-xs);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}

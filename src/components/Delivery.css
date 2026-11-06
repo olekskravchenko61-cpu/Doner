@@ -1,0 +1,131 @@
+.delivery__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.delivery__content > svg {
+  margin-bottom: var(--space-sm);
+}
+
+.delivery .eyebrow {
+  color: var(--color-graphite);
+}
+
+.delivery .eyebrow::before {
+  background: var(--color-graphite);
+}
+
+.delivery .section-heading__subtitle {
+  color: var(--color-graphite);
+}
+
+.delivery__zones {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-small);
+}
+
+.delivery__zones th {
+  padding: 0 0.5rem 0.4rem 0;
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.delivery__zones td {
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  border-top: 1px solid rgba(25, 25, 25, 0.35);
+  font-weight: 500;
+  vertical-align: top;
+}
+
+/* Three columns don't fit narrow phones, so each zone becomes a labelled block. */
+@media (max-width: 480px) {
+  .delivery__zones thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .delivery__zones tr {
+    display: block;
+    padding-block: 0.5rem;
+    border-top: 1px solid rgba(25, 25, 25, 0.35);
+  }
+
+  .delivery__zones td {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-xs);
+    padding: 0.1rem 0;
+    border: none;
+    text-align: right;
+  }
+
+  .delivery__zones td::before {
+    content: attr(data-label);
+    flex-shrink: 0;
+    max-width: 50%;
+    font-size: var(--fs-tiny);
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .delivery__zones td:first-child {
+    font-weight: 700;
+  }
+
+  .delivery__zones td:first-child::before {
+    display: none;
+  }
+
+  .delivery__zones td:first-child {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+.delivery__status {
+  margin: var(--space-xs) 0 var(--space-md);
+  font-size: var(--fs-small);
+}
+
+.delivery__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.delivery__phone-pending {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-small);
+}
+
+.delivery__media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 5 / 4;
+  border-radius: var(--radius-lg);
+}
+
+.delivery__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 900px) {
+  .delivery__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+}

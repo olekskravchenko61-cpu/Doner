@@ -1,0 +1,128 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-graphite);
+  color: var(--color-cream);
+  overflow: hidden;
+  padding-top: var(--header-height-mobile);
+}
+
+.hero__media {
+  position: relative;
+  height: 44vh;
+  min-height: 240px;
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 60%;
+}
+
+.hero__media .photo-tag {
+  top: 0.5rem;
+  left: auto;
+  right: 0.5rem;
+}
+
+.hero__inner {
+  position: relative;
+  padding-block: var(--space-md) var(--space-xl);
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(2.5rem, 12.5vw, 8.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.hero__title-accent {
+  color: var(--color-red);
+}
+
+.hero__subtitle {
+  max-width: 44ch;
+  font-size: var(--fs-lead);
+  color: var(--color-text-on-dark-muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+}
+
+.hero__scroll-hint {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    min-height: min(100vh, 900px);
+    padding-top: var(--header-height);
+    justify-content: center;
+  }
+
+  .hero__media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 62%;
+    height: auto;
+  }
+
+  /* Blends the photo into the graphite column so the headline can overlap it. */
+  .hero__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--color-graphite) 0%, rgba(25, 25, 25, 0.55) 28%, transparent 55%);
+  }
+
+  .hero__media .photo-tag {
+    top: auto;
+    bottom: 0.5rem;
+    z-index: 2;
+  }
+
+  .hero__title {
+    font-size: clamp(4rem, 8.4vw, 8.5rem);
+  }
+
+  .hero__inner {
+    padding-block: var(--space-xl);
+  }
+
+  .hero__subtitle {
+    max-width: 34ch;
+  }
+
+  .hero__scroll-hint {
+    position: absolute;
+    left: max(var(--container-pad), calc((100% - var(--container-width)) / 2 + var(--container-pad)));
+    bottom: var(--space-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    min-height: 44px;
+    color: var(--color-text-on-dark-muted);
+    font-size: var(--fs-small);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}

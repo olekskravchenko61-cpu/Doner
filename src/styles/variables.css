@@ -1,0 +1,84 @@
+:root {
+  /* Brand colors */
+  --color-red: #F04435;
+  --color-red-dark: #D32E20;
+  --color-red-light: #FDE4E1;
+  --color-red-text: #BF2A1C; /* #F04435 fails AA as small text on white/cream */
+  --color-on-red: #191919; /* white on #F04435 is only 3.6:1 */
+  --color-graphite: #191919;
+  --color-graphite-soft: #262321;
+  --color-cream: #F5F0E8;
+  --color-cream-soft: #EFE8DB;
+  --color-white: #FFFFFF;
+  --color-grey: #777777;
+  --color-grey-light: #CFCAC2;
+  --color-border: rgba(25, 25, 25, 0.1);
+  --color-border-light-on-dark: rgba(245, 240, 232, 0.14);
+
+  /* Semantic */
+  --color-bg: var(--color-white);
+  --color-bg-alt: var(--color-cream);
+  --color-bg-dark: var(--color-graphite);
+  --color-text: var(--color-graphite);
+  --color-text-muted: #666666; /* #777 misses AA on cream */
+  --color-text-on-dark: var(--color-cream);
+  --color-text-on-dark-muted: #B8B2A7;
+  --color-accent: var(--color-red);
+
+  /* Typography */
+  /* Space Grotesk has no Cyrillic glyphs; Russian headings fall through to Inter. */
+  --font-heading: 'Space Grotesk Variable', 'Inter Variable', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Inter Variable', 'Helvetica Neue', Arial, sans-serif;
+
+  --fs-display: clamp(2.75rem, 5.5vw + 1rem, 6rem);
+  --fs-h1: clamp(2.25rem, 4vw + 1rem, 3.75rem);
+  --fs-h2: clamp(2rem, 3.6vw + 1rem, 4rem);
+  --fs-h3: clamp(1.25rem, 1.2vw + 1rem, 1.75rem);
+  --fs-lead: clamp(1.05rem, 0.6vw + 0.9rem, 1.3rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-tiny: 0.75rem;
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.25;
+  --lh-normal: 1.55;
+
+  /* Spacing scale */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 9rem;
+
+  /* Layout */
+  --container-width: 1280px;
+  --container-pad: clamp(1.25rem, 4vw, 3rem);
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-pill: 4px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 180ms;
+  --duration-normal: 320ms;
+  --duration-slow: 600ms;
+
+  /* Elevation */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: 0 16px 40px rgba(25, 25, 25, 0.18);
+
+  /* Z-index scale */
+  --z-header: 100;
+  --z-mobile-menu: 200;
+  --z-cart: 210;
+  --z-toast: 300;
+
+  --header-height: 76px;
+  --header-height-mobile: 64px;
+}
